@@ -1,7 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import KasvatusButton from "./kasvatus";
+import VahennysButton from "./vahennys";
+import NollausButton from "./nollaus";
+import TuplaKasvatusButton from "./tupla";
+import CountDisplay from "./count";
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -9,19 +11,13 @@ function Counter() {
   return (
     <div>
       <h2>Counter</h2>
-      <p>Arvo: {count}</p>
 
-      <button onClick={() => setCount(count + 1)}>
-        Kasvatus
-      </button>
+      <CountDisplay count={count} />
 
-      <button onClick={() => setCount(count - 1)}>
-        Vähennys
-      </button>
-
-      <button onClick={() => setCount(0)}>
-        Nollaus
-      </button>
+      <KasvatusButton setCount={setCount} count={count} />
+      <VahennysButton setCount={setCount} count={count} />
+      <TuplaKasvatusButton setCount={setCount} count={count} />
+      <NollausButton setCount={setCount} />
     </div>
   );
 }
