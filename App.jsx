@@ -1,25 +1,18 @@
-import { useState } from "react";
-import KasvatusButton from "./kasvatus";
-import VahennysButton from "./vahennys";
-import NollausButton from "./nollaus";
-import TuplaKasvatusButton from "./tupla";
-import CountDisplay from "./count";
+import './App.css'
+import Kayttajakortti from "./kayttajakortti.jsx";
+import  infolista from './infolista.jsx';
+import tervehdys from './tervehdys.jsx';
 
-function Counter() {
-  const [count, setCount] = useState(0);
-
+function App() {
   return (
     <div>
-      <h2>Counter</h2>
-
-      <CountDisplay count={count} />
-
-      <KasvatusButton setCount={setCount} count={count} />
-      <VahennysButton setCount={setCount} count={count} />
-      <TuplaKasvatusButton setCount={setCount} count={count} />
-      <NollausButton setCount={setCount} />
+      <h1>Kayttajakortti</h1>
+      <Kayttajakortti
+        nimi="Jasper"
+        lista={["React", "JavaScript", "CSS"]}
+      />
     </div>
   );
 }
 
-export default Counter;
+export default App;
