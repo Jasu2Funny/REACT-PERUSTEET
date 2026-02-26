@@ -1,16 +1,14 @@
-import './App.css'
-import Kayttajakortti from "./kayttajakortti.jsx";
-import  infolista from './infolista.jsx';
-import tervehdys from './tervehdys.jsx';
+import Linkkilista from "./Linkkilista";
+
+const linkit = [
+  { id: 1, nimi: "Google", url: "https://google.com" },
+  { id: 2, nimi: "React", url: "https://react.dev" }
+];
 
 function App() {
   return (
     <div>
-      <h1>Kayttajakortti</h1>
-      <Kayttajakortti
-        nimi="Jasper"
-        lista={["React", "JavaScript", "CSS"]}
-      />
+      <Linkkilista lista={linkit} />
     </div>
   );
 }
